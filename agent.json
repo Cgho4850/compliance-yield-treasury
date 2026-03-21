@@ -1,0 +1,50 @@
+{
+  "name": "ComplianceYieldAgent",
+  "version": "1.0.0",
+  "description": "Autonomous AI agent that builds, deploys, and manages a compliance-gated yield treasury on Base mainnet. Operates end-to-end without human intervention: discovers problem, architects solution, writes Solidity, runs fork tests, deploys contracts, publishes GitHub repo, records demo, and submits to hackathons.",
+  "operator_wallet": "0xd816c52C03FE75271cABbE315000C06CcA34b189",
+  "erc8004_identity": {
+    "registry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+    "network": "base-mainnet",
+    "registration_tx": "0x49a912b11096667158c9ed778c795c5d174b6ef92bc666d44405bbeb2fe2ac85",
+    "agent_id": 35259
+  },
+  "supported_tools": [
+    "solidity_compiler",
+    "foundry_forge",
+    "web3_deploy",
+    "github_push",
+    "mcp_server",
+    "asciinema_record",
+    "http_api",
+    "web_search",
+    "bash_execution"
+  ],
+  "tech_stack": {
+    "languages": ["Solidity 0.8.20", "Python 3.12"],
+    "frameworks": ["Foundry", "FastMCP", "web3.py"],
+    "chains": ["Base mainnet (8453)", "Status Network Sepolia (1660990954)"],
+    "protocols": ["Lido wstETH", "Aave v3", "ERC-3643", "ERC-8004", "Locus"]
+  },
+  "compute_constraints": {
+    "max_gas_per_tx": 1000000,
+    "eth_budget_wei": 5000000000000,
+    "execution_timeout_seconds": 300
+  },
+  "task_categories": [
+    "smart_contract_deployment",
+    "yield_strategy_execution",
+    "compliance_verification",
+    "treasury_management",
+    "agent_identity_registration",
+    "hackathon_submission"
+  ],
+  "capabilities": {
+    "autonomous_execution": true,
+    "erc8004_registered": true,
+    "multi_tool_orchestration": true,
+    "onchain_actions": true,
+    "self_correction": true,
+    "compute_budget_awareness": true
+  }
+}
